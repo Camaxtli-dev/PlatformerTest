@@ -5,11 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerController))]
 [RequireComponent(typeof(PlayerView))]
 [RequireComponent(typeof(Character))]
-public class PlayerMediator : Mediator {
-
-    private PlayerView view;
+public class PlayerMediator : CharacterMediator {
+    
     private PlayerController controller;
-    private Character character;
 
     protected override void Awake() {
         view = GetComponent<PlayerView>();
@@ -36,24 +34,4 @@ public class PlayerMediator : Mediator {
         character.DestroyGO -= OnDestroyGObject;
     }
 
-    private void OnMove(Vector2 pos) {
-        new MoveObjectCommand().Execute(view, pos, character.Speed);
-    }
-
-    private void OnJump() { }
-
-    private void OnFire() {
-        new CharacterFireCommand().Execute(view.currentGun.GetComponent<Weapon>());
-    }
-
-    private void OnChangeWeapons() {
-        new CharacterChangeWeaponsCommand().Execute(character, view);
-    }
-
-    private void OnIncomingDamage(float damage) {
-        //  Character.Health -= damage;
-    }
-    private void OnDestroyGObject() {
-        new DestroyObjectInPoolCommand().Execute(view);
-    }
 }

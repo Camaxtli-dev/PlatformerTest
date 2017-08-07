@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class BulletView : BaseView, IGObjectView {
+public class BulletView : PoolObject, IGObjectView {
 
     protected Vector3 forward;
     public event Action<Collider2D> ColliderEnter = delegate { };

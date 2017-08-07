@@ -1,4 +1,5 @@
 ﻿
+using System;
 using UnityEngine;
 
 public interface ICharacter {
@@ -11,4 +12,6 @@ public interface ICharacter {
 
     void IncomingDamage(float damage);
     void ChangeWeapons();
+
+    event Action DestroyGO;
 }

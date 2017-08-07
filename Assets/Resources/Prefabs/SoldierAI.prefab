@@ -448,6 +448,7 @@ GameObject:
   - component: {fileID: 114722549125239684}
   - component: {fileID: 114866456570320176}
   - component: {fileID: 114668100347344570}
+  - component: {fileID: 114049813427663238}
   m_Layer: 0
   m_Name: SoldierAI
   m_TagString: Mob
@@ -2688,6 +2689,17 @@ Animator:
     'WalkForwardCrouching'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114049813427663238
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1375601109205976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc804b35ca10d614e9233fe0e076223a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114668100347344570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2710,7 +2722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b23d6beebe49a6e4e89a62bffc2af878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pl: {fileID: 0}
+  pl: {fileID: 114722549125239684}
   lerpRate: 15
   updateLookPosThreshold: 0.5
   lookWeight: 1

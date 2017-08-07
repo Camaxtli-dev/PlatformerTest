@@ -8,7 +8,7 @@ public class IKHandler : MonoBehaviour {
     Vector3 lookPos;
     Vector3 IK_lookPos;
     Vector3 targetPos;
-    public PlayerView pl;
+    public CharacterView pl;
 
     public float lerpRate = 15;
     public float updateLookPosThreshold = 2;

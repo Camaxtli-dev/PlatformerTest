@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterView : BaseView, IGObjectView {
+public class CharacterView : PoolObject, IGObjectView {
 
     [SerializeField] protected Animator anim;
     [SerializeField] protected GameObject model;
@@ -55,7 +55,7 @@ public class CharacterView : BaseView, IGObjectView {
     protected virtual void HandlerAnimation() {
         anim.SetBool("Jump", IsOnGround());
 
-        float animValue = Input.GetAxis("Horizontal");
+        float animValue = Input.GetAxis("Horizontal"); // Пофиксить должна быть отдельная переменная
         if (lookPos.x < transform.position.x) {
             animValue = -animValue;
         }

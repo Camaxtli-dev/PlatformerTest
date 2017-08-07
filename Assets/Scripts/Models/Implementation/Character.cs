@@ -11,9 +11,9 @@ public class Character : MonoBehaviour, ICharacter {
     private WeaponView currentGun;
     private int weapNum;
 
+    #region Implementation interface
     public event Action DestroyGO = delegate { };
 
-    #region Implementation interface
     public float Health {
         get { return _health; }
         set { _health = value; }
