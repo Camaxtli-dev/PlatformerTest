@@ -7,7 +7,7 @@ public class SoldierAIView : CharacterView {
 
     protected override void HandlerAimingPos() {
         if (target != null && target.activeSelf == true) {
-            Vector3 lookP = target.transform.position;
+            Vector3 lookP = target.transform.Find("AimingPoint").position;
             lookP.z = transform.position.z;
             lookPos = lookP;
         } else {

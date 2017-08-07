@@ -17,6 +17,7 @@ public class CharacterView : PoolObject, IGObjectView {
     public Vector3 lookPos;
     public WeaponView currentGun;
 
+    protected float move;
     protected bool isJumping = false;
     protected GameObject rsp;
 
@@ -55,7 +56,7 @@ public class CharacterView : PoolObject, IGObjectView {
     protected virtual void HandlerAnimation() {
         anim.SetBool("Jump", IsOnGround());
 
-        float animValue = Input.GetAxis("Horizontal"); // Пофиксить должна быть отдельная переменная
+        float animValue = move; // Пофиксить должна быть отдельная переменная
         if (lookPos.x < transform.position.x) {
             animValue = -animValue;
         }

@@ -445,10 +445,10 @@ GameObject:
   - component: {fileID: 4218016469948692}
   - component: {fileID: 50646156410345904}
   - component: {fileID: 70617626738294124}
-  - component: {fileID: 114722549125239684}
-  - component: {fileID: 114866456570320176}
-  - component: {fileID: 114668100347344570}
   - component: {fileID: 114049813427663238}
+  - component: {fileID: 114668100347344570}
+  - component: {fileID: 114866456570320176}
+  - component: {fileID: 114722549125239684}
   m_Layer: 0
   m_Name: SoldierAI
   m_TagString: Mob
@@ -2751,7 +2751,7 @@ MonoBehaviour:
   smoothing: 15
   gunPosition: {fileID: 4670915841122228}
   rightShoulder: {fileID: 4130786785312678}
-  shoulderTrans: {fileID: 4376058749495042}
+  shoulderTrans: {fileID: 4798158127384776}
   groundedEnd1: {fileID: 4742002005557670}
   groundedEnd2: {fileID: 4134044192850650}
   lookPos: {x: 0, y: 0, z: 0}

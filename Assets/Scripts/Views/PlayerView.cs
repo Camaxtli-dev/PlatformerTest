@@ -10,6 +10,10 @@ public class PlayerView : CharacterView {
         cameraTransform = GameObject.Find("Camera").GetComponent<Camera>();
     }
 
+    protected override void FixedUpdate() {
+        base.FixedUpdate();
+        move = Input.GetAxisRaw("Horizontal");
+    }
     protected override void HandlerAimingPos() {
         Ray ray = cameraTransform.ScreenPointToRay(Input.mousePosition);
 
