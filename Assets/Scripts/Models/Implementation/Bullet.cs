@@ -24,16 +24,16 @@ public class Bullet : MonoBehaviour, IBullet, IGObject {
         get { return _damage; }
         set { _damage = value; }
     }
+    #endregion
 
     public void Collider2DEnter(Collider2D collider) {
-        if (collider.gameObject.tag != "Player") {
+        if (collider.gameObject.tag != "Waypoint") {
             if (Explosion != null) {
                 new ReuseObjectInPoolCommand().Execute(Explosion, transform);
             }
             DestroyGO();
         }
     }
-    #endregion
 
     protected virtual void Awake() {
         new CreateObjectInPoolCommand().Execute(Explosion, 3);

@@ -14,12 +14,14 @@ public class CharacterView : PoolObject, IGObjectView {
 
     public Transform groundedEnd1;
     public Transform groundedEnd2;
-    public Vector3 lookPos;
+    public Vector3 targetPosition;
+    public Vector3 nonTargetPosition;
     public WeaponView currentGun;
 
     protected float move;
     protected bool isJumping = false;
     protected GameObject rsp;
+    public GameObject target;
 
     protected virtual void Start() {
         rsp = new GameObject();
@@ -33,10 +35,10 @@ public class CharacterView : PoolObject, IGObjectView {
         HandlerShoulder();
     }
 
-    protected virtual void HandlerAimingPos() { /* Модель игрока следить за курсором, бот смотрит вперед или берет в таргет игрока и следит за ним. */ }
+    protected virtual void HandlerAimingPos() { /* Модель игрока следит за курсором, бот смотрит вперед или берет в таргет игрока и следит за ним. */ }
 
     protected virtual void HandlerRotation() {
-        Vector3 directionToLook = lookPos - model.transform.position;
+        Vector3 directionToLook = targetPosition - model.transform.position;
         directionToLook.y = 0;
         Quaternion targetRotation = Quaternion.LookRotation(directionToLook);
 
@@ -44,7 +46,7 @@ public class CharacterView : PoolObject, IGObjectView {
     }
 
     protected virtual void HandlerShoulder() {
-        shoulderTrans.LookAt(lookPos);
+        shoulderTrans.LookAt(targetPosition);
 
         Vector3 rightShoulderPos = rightShoulder.TransformPoint(Vector3.zero);
         rsp.transform.position = rightShoulderPos;
@@ -57,7 +59,7 @@ public class CharacterView : PoolObject, IGObjectView {
         anim.SetBool("Jump", IsOnGround());
 
         float animValue = move; // Пофиксить должна быть отдельная переменная
-        if (lookPos.x < transform.position.x) {
+        if (targetPosition.x < transform.position.x) {
             animValue = -animValue;
         }
         anim.SetFloat("Move", animValue, .1f, Time.deltaTime);

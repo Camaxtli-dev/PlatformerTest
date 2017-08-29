@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,6 +22,7 @@ public class PlayerMediator : CharacterMediator {
         controller.Jump += OnJump;
         controller.Fire += OnFire;
         controller.ChangeWeapons += OnChangeWeapons;
+        controller.LookPosition += OnLookPosition;
 
         character.DestroyGO += OnDestroyGObject;
     }
@@ -30,8 +32,13 @@ public class PlayerMediator : CharacterMediator {
         controller.Jump -= OnJump;
         controller.Fire -= OnFire;
         controller.ChangeWeapons -= OnChangeWeapons;
+        controller.LookPosition -= OnLookPosition;
 
         character.DestroyGO -= OnDestroyGObject;
+    }
+
+    private void OnLookPosition(Vector3 pos) {
+        new CharacterLookPositionCommand().Execute(pos, view);
     }
 
 }

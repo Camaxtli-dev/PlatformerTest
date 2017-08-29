@@ -56,7 +56,7 @@ public class Character : MonoBehaviour, ICharacter {
     }
     #endregion
 
-    protected void Start() {
+    protected virtual void Start() {
         for (int i = 0; i < Guns.Length; i++) {
             new CreateObjectInPoolCommand().Execute(Guns[i].gameObject, 1);
         }

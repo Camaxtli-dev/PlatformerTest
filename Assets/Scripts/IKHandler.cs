@@ -48,7 +48,7 @@ public class IKHandler : MonoBehaviour {
         anim.SetIKHintPosition(AvatarIKHint.RightElbow, rightElbowTarget.position);
         anim.SetIKHintPosition(AvatarIKHint.LeftElbow, leftEblowTarget.position);
 
-        lookPos = pl.lookPos;
+        lookPos = pl.targetPosition;
         lookPos.z = transform.position.z;
 
         float distanceFromPlayer = Vector3.Distance(lookPos, transform.position);

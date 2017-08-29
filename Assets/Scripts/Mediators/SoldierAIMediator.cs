@@ -1,7 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
+[RequireComponent(typeof(SoldierAI))]
 [RequireComponent(typeof(SoldierAIController))]
+[RequireComponent(typeof(SoldierAIView))]
 public class SoldierAIMediator : CharacterMediator {
 
     private SoldierAIController controller;
@@ -18,6 +20,7 @@ public class SoldierAIMediator : CharacterMediator {
         controller.Jump += OnJump;
         controller.Fire += OnFire;
         controller.ChangeWeapons += OnChangeWeapons;
+        controller.OnTarget += OnTarget;
 
         character.DestroyGO += OnDestroyGObject;
     }
@@ -27,7 +30,12 @@ public class SoldierAIMediator : CharacterMediator {
         controller.Jump -= OnJump;
         controller.Fire -= OnFire;
         controller.ChangeWeapons -= OnChangeWeapons;
+        controller.OnTarget -= OnTarget;
 
         character.DestroyGO -= OnDestroyGObject;
+    }
+
+    private void OnTarget(GameObject target) {
+        new CharacterOnTargetController().Execute(target, view);
     }
 }

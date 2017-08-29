@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.6.1f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -100,6 +102,8 @@
     <Compile Include="Assets\Scripts\Mediators\SoldierAIMediator.cs" />
     <Compile Include="Assets\Scripts\Models\Implementation\Bullet.cs" />
     <Compile Include="Assets\Scripts\Models\Implementation\Character.cs" />
+    <Compile Include="Assets\Scripts\Models\Implementation\SoldierAI.cs" />
+    <Compile Include="Assets\Scripts\Models\Implementation\Waypoint.cs" />
     <Compile Include="Assets\Scripts\Models\Implementation\Weapon.cs" />
     <Compile Include="Assets\Scripts\Models\Interface\IBullet.cs" />
     <Compile Include="Assets\Scripts\Models\Interface\ICharacter.cs" />

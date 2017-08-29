@@ -24,3 +24,15 @@ public class CharacterChangeWeaponsCommand {
         view.ChangeWeapons(character.CurrentGun);
     }
 }
+
+public class CharacterOnTargetController {
+    public void Execute(GameObject target, CharacterView view) {
+        view.target = target;
+    }
+}
+
+public class CharacterLookPositionCommand {
+    public void Execute(Vector3 pos, CharacterView view) {
+        view.nonTargetPosition = pos;
+    }
+}
